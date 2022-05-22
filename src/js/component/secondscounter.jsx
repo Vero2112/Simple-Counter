@@ -5,10 +5,10 @@ import propTypes from "prop-types";
 //create your first component
 export const Contador = (props) => {
 	return (
-		<>
-			<div className="col-12">
+		<div className="container-fluid counter">
+			<div className="row justify-content-center">
 				<div className="col-1 bg-dark text-white">
-					{props.digitoIcono}
+					<i className={props.digitoIcono} aria-hidden="true"></i>
 				</div>
 				<div className="col-1 bg-dark text-white">
 					{props.digitoUno % 10}
@@ -29,7 +29,7 @@ export const Contador = (props) => {
 					{props.digitoSeis % 10}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
@@ -55,6 +55,7 @@ setInterval(function () {
 
 	ReactDOM.render(
 		<Contador
+			digitoIcono="far fa-clock"
 			digitoUno={one}
 			digitoDos={two}
 			digitoTres={three}

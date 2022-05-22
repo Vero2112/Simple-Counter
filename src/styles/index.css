@@ -10,3 +10,20 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+ .counter{
+    margin: auto;
+    width: 100%;
+    background: #101010;
+
+}
+
+.counter div{
+    font-size: 80px;
+    line-height: 100px;
+    color: rgb(177, 241, 252);
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+
+}
