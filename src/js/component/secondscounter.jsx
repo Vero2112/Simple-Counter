@@ -8,32 +8,27 @@ export const Contador = (props) => {
 	const stoptime = function myStopFunction() {
 		clearInterval(myInterval);
 	};
-	const resettime = function (sec) {
-		sec = typeof sec !== "undefined" ? sec : 0;
-		counter = sec;
-		generateTime(time);
+	const resettime = function reset() {
+		counter = 0;
+		setTimeout(reset, 10);
 	};
 
 	const gettime = function () {
 		return counter;
 	};
 
-	const countdown =
-		// let counter = 0;
-		//
-		// function myGreeting() {
-		//   document.getElementById("demo").innerHTML = "Happy Birthday!"
-		// }
-		function removeTime(time) {
-			const one = Math.floor(counter / 100000);
-			const two = Math.floor(counter / 10000);
-			const three = Math.floor(counter / 1000);
-			const four = Math.floor(counter / 100);
-			const five = Math.floor(counter / 10);
-			const six = Math.floor(counter / 1);
-			counter--;
-			setTimeout(removeTime, 1000);
-		};
+	const countdown = function removeTime(time) {
+		// clearInterval(myInterval);
+		const one = Math.floor(counter / 100000);
+		const two = Math.floor(counter / 10000);
+		const three = Math.floor(counter / 1000);
+		const four = Math.floor(counter / 100);
+		const five = Math.floor(counter / 10);
+		const six = Math.floor(counter / 1);
+		counter--;
+
+		setTimeout(removeTime, 1000);
+	};
 	// const myTimeout = setTimeout(removeTime, 1000);
 
 	return (
