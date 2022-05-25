@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 
 //create your first component
 export const Contador = (props) => {
-	const [counter, setCounter] = useState(95);
+	// const [counter, setCounter] = useState(95);
 	const stoptime = function myStopFunction() {
 		clearInterval(myInterval);
 	};
@@ -17,6 +17,25 @@ export const Contador = (props) => {
 	const gettime = function () {
 		return counter;
 	};
+
+	const countdown =
+		// let counter = 0;
+		//
+		// function myGreeting() {
+		//   document.getElementById("demo").innerHTML = "Happy Birthday!"
+		// }
+		function removeTime(time) {
+			const one = Math.floor(counter / 100000);
+			const two = Math.floor(counter / 10000);
+			const three = Math.floor(counter / 1000);
+			const four = Math.floor(counter / 100);
+			const five = Math.floor(counter / 10);
+			const six = Math.floor(counter / 1);
+			counter--;
+			setTimeout(removeTime, 1000);
+		};
+	// const myTimeout = setTimeout(removeTime, 1000);
+
 	return (
 		<div>
 			<div className="container-fluid counter">
@@ -45,7 +64,9 @@ export const Contador = (props) => {
 				</div>
 			</div>
 			<div className="position-absolute top-50 start-50 translate-middle">
-				<button className="m-2">Countdown</button>
+				<button onClick={countdown} className="m-2">
+					Countdown
+				</button>
 				<button onClick={stoptime} className="m-2">
 					Stop
 				</button>
