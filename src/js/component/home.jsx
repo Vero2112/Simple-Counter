@@ -1,5 +1,5 @@
 import React from "react";
-
+// import { Contador } from "./secondscounter.jsx";
 import { Contador } from "./secondscounter.jsx";
 
 //create your first component
