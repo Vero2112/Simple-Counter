@@ -48,7 +48,7 @@ export const Contador = (props) => {
 	};
 
 	const gettime = () => {
-		alert(`Tiempo total: ${counter}s`); //no funciona la alerta!
+		alert(`Tiempo total: ${counter}s`); 
 	};
 	const restart = () => {
 		if (myInterval == null) {
